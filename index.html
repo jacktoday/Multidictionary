@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/fontawesome/css/all.css">
+
+
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+
+
+  <style>
+    .navbar {
+      background-color: #545652 !important;
+    }
+
+
+    
+  </style>
+
+
+</head>
+
+<body>
+  <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+  <!--<h1>hello</h1>-->
+
+  <!--<iframe src="https://www.collinsdictionary.com/dictionary/english/learn"  name="iframe_a"  width="100%" height="400" title=" "></iframe>
+      
+
+        <p><a href="https://www.collinsdictionary.com/dictionary/english/learn"  target="iframe_a">W3Schools.com</a></p>
+
+        <iframe src="https://www.ldoceonline.com/"  width="100%" height="400" title=" "></iframe>
+
+        
+        <iframe src="https://learnersdictionary.com/"  style="border:none" width="100%" height="400" title="description"></iframe>
+
+
+        <iframe src="https://www.google.com/"  style="border:none" width="100%" height="400" title="description"></iframe>-->
+
+  <!--<iframe src="https://learnersdictionary.com/"  style="border:none" width="100%" height="400" title="description"></iframe>
+        -->
+
+  <nav class="navbar navbar-expand-sm bg-success navbar-light">
+    <a class="navbar-brand p-3" href="#">Dictionaries</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <!--<ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>    
+            </ul>-->
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+
+
+    <img src="https://source.unsplash.com/random/400x300" class="rounded mx-auto d-block img-fluid pt-5 pb-5">
+
+
+    <div class="row justify-content-center p-3">
+
+      <div class="form-floating col-12 col-md-5 align-self-center">
+        <input type="text" class="form-control border-success" id="wordInputId" placeholder="" value="">
+    </button>
+        <label for="wordInputId">Input a word -> Select a dictionary</label>
+      </div>
+
+    </div>
+
+
+
+    <div class="row justify-content-center">
+
+      <div class="col">
+        <nav id="dictionaryLinks" class="nav justify-content-center">
+
+        </nav>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="text-center" style="margin-bottom:0">
+    <p> </p>
+  </div>
+
+
+  <script type="text/javascript">
+
+
+    var obj = {
+      Oxford: "https://www.oxfordlearnersdictionaries.com/definition/english/",
+      Collins: "https://www.collinsdictionary.com/dictionary/english/",
+      Cambridge: "https://dictionary.cambridge.org/dictionary/english/",
+      'Merriam Webster': "https://learnersdictionary.com/definition/",
+      vocabulary: "https://www.vocabulary.com/dictionary/",
+      Etymonline: "https://www.etymonline.com/search?q=",
+      Dictionary: "https://www.dictionary.com/browse/",
+      Thesaurus: "https://www.thesaurus.com/browse/",
+    };
+
+
+    var linkHtml = "";
+
+    for (var key in obj) {
+
+      linkHtml += "<a class=\"nav-link\" href=\"#\" id=\"" + key + "\">" + key + "</a>";
+    }
+
+
+    $(document).ready(function () {
+
+      $("#dictionaryLinks").html(linkHtml);
+
+      $("#dictionaryLinks a").click(function () {
+
+        var key = $(this).attr('id');
+
+        window.open(obj[key] + $("#wordInputId").val());
+
+      });
+
+      //$("#collinsdictionary").load("https://www.collinsdictionary.com/dictionary/english/learn");
+      /*
+      $.get("https://www.collinsdictionary.com/dictionary/english/learn", function(data) {
+          $("#collinsdictionary").html(data);
+
+      });   */
+
+    })
+
+  </script>
+
+
+
+</body>
+
+</html>
