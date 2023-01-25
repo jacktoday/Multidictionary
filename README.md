@@ -1,4 +1,4 @@
 # Multidictionary
  
 
-https://fulinme.github.io/Multidictionary/
+https://jacktoday.github.io/Multidictionary/
